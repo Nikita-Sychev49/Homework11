@@ -20,12 +20,12 @@ public class Main {
         checkYearOnLeap(someYear);
     }
 
-    public static void recomnendVersion(int clientOS, int year) {
-        if (clientOS == 0 && year >= 2015) {
+    public static void recomnendVersion(int clientOS, int year, int someYear) {
+        if (clientOS == 0 && year >= someYear) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         } else if (clientOS == 0) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientOS == 1 && year < 2015) {
+        } else if (clientOS == 1 && year < someYear) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         } else {
             System.out.println("Установите версию приложения для Android по ссылке");
@@ -36,7 +36,8 @@ public class Main {
         System.out.println("Задача 2");
         int os = 0;
         int clientDeviceYear = 2014;
-        recomnendVersion(os, clientDeviceYear);
+        int year = 2015;
+        recomnendVersion(os, clientDeviceYear, year);
     }
 
     public static int countDays(int distance) {
